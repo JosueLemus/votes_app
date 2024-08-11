@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:votes_app/presentation/screens/vote_tracking_screen.dart';
 
 class VotingCardScreen extends StatelessWidget {
   const VotingCardScreen({super.key});
@@ -128,7 +129,19 @@ class VotingCardScreen extends StatelessWidget {
                 child: SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {}, child: Text('Ver seguimiento de voto')),
+                      onPressed: () {
+                        String idAddress = 'dsadjne-3213-3213d';
+
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => VoteTrackingScreen(
+                              idAddress: idAddress,
+                            ),
+                          ),
+                        );
+                      },
+                      child: const Text('Ver seguimiento de voto')),
                 ),
               )
             ],

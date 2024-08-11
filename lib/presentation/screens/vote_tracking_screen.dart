@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class WebViewPage extends StatefulWidget {
+class VoteTrackingScreen extends StatefulWidget {
   final String idAddress;
 
-  const WebViewPage({Key? key, required this.idAddress}) : super(key: key);
+  const VoteTrackingScreen({Key? key, required this.idAddress})
+      : super(key: key);
 
   @override
-  _WebViewPageState createState() => _WebViewPageState();
+  _VoteTrackingScreenState createState() => _VoteTrackingScreenState();
 }
 
-class _WebViewPageState extends State<WebViewPage> {
+class _VoteTrackingScreenState extends State<VoteTrackingScreen> {
   late final WebViewController controller;
 
   @override
   void initState() {
     super.initState();
-
-    // Construir la URL usando el idAddress
-    final String url = 'https://www.holamundo.com/${widget.idAddress}';
+    const String url = 'https://www.google.com';
 
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
@@ -29,7 +28,7 @@ class _WebViewPageState extends State<WebViewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Web Page'),
+        title: const Text('Seguimiento de voto'),
       ),
       body: WebViewWidget(controller: controller),
     );
