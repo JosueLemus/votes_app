@@ -30,7 +30,7 @@ class VotingCardScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        'República de Bolivia',
+                        'Bolivia',
                         style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 24,
@@ -54,7 +54,7 @@ class VotingCardScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Evo Queque Morales',
+                            'Manuel Sanchez',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
@@ -100,9 +100,9 @@ class VotingCardScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           Image.network(
-                            width: 130,
+                            width: 140,
                             height: 150,
-                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlOSFmIyNFoAsYLOzO2eVucpJ9S_xiKHmWQw&s',
+                            'https://www.ivan-garcia.com/blog/wp-content/uploads/2019/01/foto-perfil-dni-2019.jpg',
                             fit: BoxFit.cover,
                           ),
                           ClipRRect(
@@ -110,7 +110,7 @@ class VotingCardScreen extends StatelessWidget {
                                 bottomLeft: Radius.circular(10),
                                 bottomRight: Radius.circular(10)),
                             child: Image.network(
-                                width: 130,
+                                width: 140,
                                 'https://cdn.shopify.com/s/files/1/0594/4639/5086/files/underline_b49eefdc-d72c-4e68-84a4-dcbd1404a772.jpg'),
                           )
                         ],
@@ -121,7 +121,15 @@ class VotingCardScreen extends StatelessWidget {
               )),
               Image.network(
                 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/800px-QR_code_for_mobile_English_Wikipedia.svg.png',
-                // width: MediaQuery.of(context).size.width * 0.5,
+                width: MediaQuery.of(context).size.width * 0.7,
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 32),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {}, child: Text('Ver seguimiento de voto')),
+                ),
               )
             ],
           ),

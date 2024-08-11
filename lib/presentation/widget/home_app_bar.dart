@@ -12,7 +12,7 @@ class HomeAppBar extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Hola Evo',
+              'Hola Manuel Sanchez',
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 24,
@@ -40,7 +40,7 @@ class HomeAppBar extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.network(
-              'https://static.dw.com/image/51216825_605.jpg',
+              'https://www.ivan-garcia.com/blog/wp-content/uploads/2019/01/foto-perfil-dni-2019.jpg',
               fit: BoxFit.cover,
             ),
           ),

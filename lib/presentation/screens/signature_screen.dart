@@ -69,8 +69,7 @@ class _SignatureScreenState extends State<SignatureScreen> {
                 onPressed: _isSignatureEmpty
                     ? null
                     : () {
-                        // Lógica para continuar, como navegar a otra pantalla
-                        print('Firma guardada y continuar');
+                        _showConfirmationPopup(context);
                       },
                 child: const Text('Continuar'),
               ),
@@ -91,6 +90,51 @@ class _SignatureScreenState extends State<SignatureScreen> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showConfirmationPopup(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('¡Voto Emitido!'),
+          content: RichText(
+            text: const TextSpan(
+              style: TextStyle(color: Colors.black, fontSize: 16),
+              children: [
+                TextSpan(
+                  text:
+                      'Tu voto ha sido emitido y puedes seguirlo con el siguiente address: ',
+                ),
+                TextSpan(
+                  text: 'wedghjy-refdse-rewfdsfb-fdsfds-fbvcbf-dsqwer',
+                  style: TextStyle(
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+                TextSpan(
+                  text:
+                      '\n\nTambién podrás hacer seguimiento desde el carnet de sufragio en la pantalla principal de la app.',
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Cerrar el popup
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  '/home',
+                  (Route<dynamic> route) => false,
+                );
+              },
+              child: const Text('Aceptar'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
